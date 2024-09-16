@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# حظر ملفات معينة من الأرشفة
+Disallow: /private/
+
+# حظر جميع الملفات التي تنتهي بـ .git أو تحتوي على .git في المسار
+Disallow: /*.git*
+
+# السماح بفهرسة الصور
+User-agent: Googlebot-Image
+Allow: /images/
+
+# خريطة الموقع (sitemap)
+Sitemap: https://seebrahemsobhy.github.io/EBRAHEM-SOBHY/sitemap.xml
