@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- تحديد مجموعة الأحرف المستخدمة في الصفحة -->
     <meta charset="UTF-8">
-
-    <!-- ضبط العرض لمطابقة حجم الجهاز وتغيير حجم العرض بناءً على تكبير الصفحة -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- وصف الموقع لتقديم فكرة واضحة عنه لمحركات البحث ووسائل التواصل الاجتماعي -->
     <meta name="description" content="Explore Ebrahem Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
-
-    <!-- كلمات دلالية لتحسين البحث عن الموقع -->
-<meta name="keywords" content="Ebrahem Sobhy, web developer, portfolio, personal website, ebrahem sobhy, Ebrahim Sobhy, ابراهيم صبحي, إبراهيم صبحي, المبرمج ابراهيم, Hacker B13 Man, Hacker Ebrahem, ebrahem hacker, الباشمهندس ابراهيم">
-
-    <!-- تحديد مؤلف الموقع لتحسين التخصيص -->
+    <meta name="keywords" content="Ebrahem Sobhy, web developer, portfolio, personal website, ebrahem sobhy, Ebrahim Sobhy, ابراهيم صبحي, إبراهيم صبحي, المبرمج ابراهيم, Hacker B13 Man, Hacker Ebrahem, ebrahem hacker, الباشمهندس ابراهيم">
     <meta name="author" content="Ebrahem Sobhy">
-
-    <!-- ضمان التوافق مع متصفحات الويب القديمة -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ebrahem Sobhy</title>
 
-    <!-- عنوان الصفحة الذي يظهر في شريط العنوان للمتصفح -->
-
-
-<title>Ebrahem Sobhy</title>
-
-    <!-- Open Graph Meta Tags لتحسين عرض الرابط عند المشاركة على وسائل التواصل الاجتماعي -->
     <meta property="og:title" content="Ebrahem Sobhy">
     <meta property="og:description" content="Explore Ebrahem Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
     <meta property="og:image" content="images/mybloglogo.webp">
@@ -32,16 +16,13 @@
     <meta property="og:type" content="website">
     <meta property="og:image:alt" content="A professional image representing Ebrahem Sobhy's portfolio">
 
-    <!-- Twitter Card Meta Tags لتحسين عرض الرابط عند المشاركة على تويتر -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ebrahem Sobhy">
     <meta name="twitter:description" content="Explore Ebrahem Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
     <meta name="twitter:image" content="images/mybloglogo.webp">
 
-    <!-- Favicon لتحسين تجربة المستخدم وإظهار أيقونة الموقع في شريط العنوان للمتصفح -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- تحسين أداء تحميل الخطوط والخدمات الخارجية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Bootstrap Icons CSS -->
@@ -56,7 +37,7 @@
             font-family: Arial, sans-serif;
             color: #fff;
             background-color: #333;
-/* الأساسيات لجميع الشاشات */
+
 nav {
     position: fixed;
     width: 100%;
@@ -81,12 +62,11 @@ nav .name {
     color: #000;
 }
 
-/* قائمة التنقل - تظهر بشكل أفقي على الشاشات الكبيرة والمتوسطة */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* عرض القوائم بشكل أفقي */
+    display: flex; 
 }
 
 nav ul li {
@@ -120,27 +100,27 @@ nav ul li a:hover::after {
     transform-origin: bottom left;
 }
 
-/* تصميم الشاشات الكبيرة (769 بكسل وأكثر) - التابلت، اللابتوب، والكمبيوتر */
+
 @media (min-width: 769px) {
     .menu-toggle {
-        display: none; /* إخفاء رمز البرغر على الشاشات الكبيرة */
+        display: none;
     }
 
     nav ul {
-        display: flex; /* عرض القائمة بشكل أفقي على الشاشات الكبيرة */
+        display: flex;
     }
 
     nav ul li {
-        margin-left: 20px; /* تباعد بين العناصر */
+        margin-left: 20px; 
     }
-}/* تصميم شاشات الهواتف (768 بكسل وأقل) */
+}
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; /* عرض رمز البرغر على الشاشات الصغيرة */
+        display: flex; 
         flex-direction: column;
         cursor: pointer;
-        align-self: center; /* محاذاة الأيقونة إلى المنتصف */
-        z-index: 1001; /* التأكد من أن الأيقونة تكون فوق القائمة */
+        align-self: center; 
+        z-index: 1001; 
     }
 
     .menu-toggle .bar {
@@ -152,109 +132,105 @@ nav ul li a:hover::after {
     }
 
     nav ul {
-        display: none; /* إخفاء القائمة بشكل افتراضي على الشاشات الصغيرة */
+        display: none; 
         flex-direction: column;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.9);
-        padding: 20px 0; /* إضافة بعض التباعد حول القائمة */
-        align-items: center; /* محاذاة العناصر في المنتصف */
+        padding: 20px 0; 
+        align-items: center; 
         position: absolute;
-        top: 70px; /* ضبط المسافة من أعلى القائمة حسب حاجتك */
+        top: 70px;
         left: 0;
         right: 0;
-        z-index: 1000; /* التأكد من أن القائمة تكون فوق باقي العناصر */
-        transition: max-height 0.3s ease-out; /* تأثير الانتقال لتسهيل عرض القائمة */
-        max-height: 0; /* بدء الحالة بتخفيف الارتفاع إلى صفر */
-        overflow: hidden; /* إخفاء المحتوى الذي يتجاوز الحد */
+        z-index: 1000; 
+        transition: max-height 0.3s ease-out; 
+        max-height: 0; 
+        overflow: hidden; 
     }
 
     nav ul.active {
-        display: flex; /* عرض القائمة عند النقر على رمز البرغر */
-        max-height: 500px; /* تعيين حد أقصى للارتفاع عند العرض */
+        display: flex; 
+        max-height: 500px; 
     }
 
     nav ul li {
         margin-left: 0;
-        margin-bottom: 15px; /* زيادة التباعد بين العناصر */
+        margin-bottom: 15px; 
     }
 
     nav ul li a {
-        font-size: 20px; /* زيادة حجم الخط قليلاً لسهولة القراءة */
-        padding: 12px 20px; /* توسيع المنطقة القابلة للنقر */
-        text-align: center; /* توسيط النص */
+        font-size: 20px; 
+        padding: 12px 20px; 
+        text-align: center; 
     }
-}/* إعدادات السهم */
+}
+            
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none; /* مخفي افتراضياً */
-    width: 60px; /* تقليص حجم الدائرة */
-    height: 60px; /* تقليص حجم الدائرة */
-    background-color: #000; /* الخلفية سوداء */
-    color: #fff; /* لون السهم أبيض */
+    display: none; 
+    width: 60px; 
+    height: 60px; 
+    background-color: #000; 
+    color: #fff; 
     text-align: center;
     line-height: 60px;
-    font-size: 28px; /* تكبير حجم السهم ليبدو فخمًا */
-    border-radius: 50%; /* تصميم دائري */
+    font-size: 28px; 
+    border-radius: 50%; 
     z-index: 100;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للدائرة */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* تأثير التحويم */
 .back-to-top:hover {
-    transform: scale(1.1); /* تكبير عند التحويم */
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); /* ظل أكثر قوة عند التحويم */
+    transform: scale(1.1); 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
-/* أيقونة السهم داخل الدائرة */
 .back-to-top i {
     display: inline-block;
     vertical-align: middle;
 }
 
-/* تصميم مخصص للشاشات الصغيرة */
 @media (max-width: 600px) {
     .back-to-top {
-        width: 50px; /* تقليص حجم الدائرة أكثر */
+        width: 50px; 
         height: 50px;
-        font-size: 24px; /* تقليص حجم السهم */
-        bottom: 15px; /* تقليل المسافة من الأسفل */
-        right: 15px; /* تقليل المسافة من اليمين */
-        line-height: 50px; /* تعديل المسافة العمودية لتناسب الحجم الجديد */
+        font-size: 24px; 
+        bottom: 15px; 
+        right: 15px; 
+        line-height: 50px; 
     }
 }
 
-/* تصميم مخصص للشاشات الكبيرة */
 @media (min-width: 1200px) {
     .back-to-top {
-        width: 70px; /* تكبير الدائرة للشاشات الأكبر */
+        width: 70px; 
         height: 70px;
-        font-size: 30px; /* تكبير السهم */
-        bottom: 30px; /* زيادة المسافة من الأسفل */
-        right: 30px; /* زيادة المسافة من اليمين */
+        font-size: 30px; 
+        bottom: 30px; 
+        right: 30px; 
         line-height: 70px;
     }
 }
-/* التصميم الأساسي لقسم الصفحة الرئيسية */
+
 #home {
-    height: 100vh; /* يغطي كامل ارتفاع الشاشة */
+    height: 100vh; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                      url('images/welcome.jpg'); /* إضافة لون غامق أعلى الصورة */
-    background-size: cover; /* تغطية كاملة للصورة */
-    background-position: center; /* تمركز الصورة في المنتصف */
-    background-blend-mode: darken; /* دمج اللون مع الصورة بطريقة تجعلها تميل إلى الأسود */
-    display: flex; /* استخدام Flexbox لسهولة تنظيم المحتوى */
-    flex-direction: column; /* تنظيم المحتوى في عمود */
-    justify-content: center; /* تمركز المحتوى عموديًا */
-    align-items: center; /* تمركز المحتوى أفقيًا */
-    text-align: center; /* توسيط النص */
-    padding: 0 20px; /* إضافة مسافة حول المحتوى من الجوانب */
+                      url('images/welcome.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-blend-mode: darken; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 0 20px; 
 }
 
-/* تنسيق العنوان الرئيسي */
 #home h1 {
     font-size: 70px;
     margin: 0;
@@ -263,7 +239,6 @@ nav ul li a:hover::after {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* تنسيق العنوان الثانوي */
 #home h2 {
     font-size: 50px;
     margin: 20px 0;
@@ -272,54 +247,52 @@ nav ul li a:hover::after {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* تنسيق النص المتحرك */
 .typing {
-    color: #fff; /* تغيير لون النص إلى الأبيض */
+    color: #fff; 
     font-weight: bold;
-    font-size: 55px; /* ضبط حجم الخط */
+    font-size: 55px; 
 }
 
-/* تصميم الشاشات الصغيرة (768 بكسل وأقل) */
 @media (max-width: 768px) {
     #home {
-        background-position: 80% center; /* تحريك الصورة قليلاً إلى اليسار */
+        background-position: 80% center; 
     }
 
     #home h1 {
-        font-size: 40px; /* تقليل حجم العنوان الرئيسي */
+        font-size: 40px; 
     }
 
     #home h2 {
-        font-size: 30px; /* تقليل حجم العنوان الثانوي */
+        font-size: 30px; 
     }
 
     .typing {
-        font-size: 40px; /* تقليل حجم النص المتحرك */
+        font-size: 40px; 
     }
 }
 
         .social-icons {
-    display: flex; /* يجعل الأيقونات تظهر بجانب بعضها البعض */
-    justify-content: center; /* يركز الأيقونات في المنتصف */
-    padding: 10px; /* يضيف بعض المساحة حول الأيقونات */
+    display: flex; 
+    justify-content: center; 
+    padding: 10px;
 }
 
 .social-icons a {
-    color: #fff; /* يحدد لون الأيقونات */
-    font-size: 24px; /* يحدد حجم الأيقونات */
-    margin: 0 10px; /* يضيف مساحة بين الأيقونات */
-    text-decoration: none; /* يزيل التسطير من الأيقونات */
-    transition: transform 0.3s ease; /* يضيف تأثير الانتقال للتكبير */
+    color: #fff; 
+    font-size: 24px; 
+    margin: 0 10px; 
+    text-decoration: none; 
+    transition: transform 0.3s ease; 
 }
 
 .social-icons a:hover {
-    transform: scale(1.2); /* يكبر الأيقونات عند التمرير */
+    transform: scale(1.2); 
 }
-/* الأساسيات لقسم About */
-#about {
+
+    #about {
     padding: 80px 20px;
-    background-color: #fff; /* خلفية بيضاء للقسم */
-    color: #333; /* لون النص الداكن */
+    background-color: #fff; 
+    color: #333; 
 }
 
 #about .container {
@@ -335,142 +308,137 @@ nav ul li a:hover::after {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 5px solid #333; /* لون الحدود الداكنة */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* ظل خفيف للصورة */
-    object-fit: cover; /* ملء الصورة في الحاوية */
+    border: 5px solid #333; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    object-fit: cover; 
 }
 
-/* تحسين نص المعلومات */
 #about .info {
     flex: 1;
 }
 
 #about .info h1 {
-    font-size: 36px; /* حجم الخط الكبير للعناوين */
+    font-size: 36px; 
     margin-bottom: 10px;
-    color: #222; /* لون النص أغمق */
+    color: #222; 
 }
 
 #about .info h2 {
-    font-size: 24px; /* حجم الخط للعناوين الثانوية */
+    font-size: 24px; 
     margin-bottom: 20px;
-    color: #444; /* لون النص الداكن */
+    color: #444; 
 }
 
 #about .info p {
-    font-size: 18px; /* حجم الخط للنصوص */
-    line-height: 1.6; /* ارتفاع السطر لسهولة القراءة */
+    font-size: 18px; 
+    line-height: 1.6; 
     margin-bottom: 20px;
 }
 
-/* تصميم الأزرار */
 .button {
-    padding: 12px 24px; /* زيادة padding */
+    padding: 12px 24px; 
     text-decoration: none;
     font-size: 18px;
-    border-radius: 8px; /* زوايا أكثر استدارة */
+    border-radius: 8px; 
     display: inline-block;
     margin-right: 10px;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .button.white {
-    background-color: #fff; /* خلفية بيضاء */
-    color: #333; /* لون النص الداكن */
-    border: 2px solid #333; /* لون الحدود الداكن */
+    background-color: #fff;
+    color: #333; 
+    border: 2px solid #333;
 }
 
 .button.contact-me {
-    background-color: #333; /* لون خلفية الزر الأساسي */
-    color: #fff; /* لون النص الأبيض */
-    border: 2px solid transparent; /* شفافية الحدود */
+    background-color: #333; 
+    color: #fff;
+    border: 2px solid transparent; 
 }
 
 .button.contact-me:hover {
-    background-color: #555; /* لون الخلفية عند التمرير */
-    color: #fff; /* لون النص عند التمرير */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* ظل أكبر عند التمرير */
+    background-color: #555; 
+    color: #fff; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
-/* تحسين النص المميز */
 .royal-blue-text {
-    font-size: 24px; /* حجم الخط */
-    font-weight: bold; /* سمك الخط */
-    background: linear-gradient(45deg, #0033cc, #00bfff); /* تدرج ألوان */
-    -webkit-background-clip: text; /* تطبيق التدرج على النص */
-    -webkit-text-fill-color: transparent; /* جعل النص شفافًا */
+    font-size: 24px;
+    font-weight: bold; 
+    background: linear-gradient(45deg, #0033cc, #00bfff); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
 }
 
-/* تصميم الشاشات الصغيرة (أقل من 768 بكسل) */
 @media (max-width: 768px) {
     #about .container {
-        flex-direction: column; /* تنظيم العناصر بشكل عمودي */
-        text-align: center; /* محاذاة النص في المنتصف */
+        flex-direction: column; 
+        text-align: center; 
     }
 
     #about .profile img {
-        width: 200px; /* تقليل حجم الصورة */
+        width: 200px; 
         height: 200px;
     }
 
     #about .info h1 {
-        font-size: 28px; /* تقليل حجم الخط للعناوين */
+        font-size: 28px; 
     }
 
     #about .info h2 {
-        font-size: 20px; /* تقليل حجم الخط للعناوين الثانوية */
+        font-size: 20px; 
     }
 
     #about .info p {
-        font-size: 16px; /* تقليل حجم الخط للنصوص */
+        font-size: 16px; 
     }
 }
 
-        /* التصميم الأساسي لقسم المهارات */
 #skills {
     padding: 80px 20px;
-    background-color: #fafafa; /* خلفية فاتحة جدًا */
-    color: #333; /* نص داكن ليتباين مع الخلفية */
+    background-color: #fafafa; 
+    color: #333; 
     text-align: center;
 }
 
 #skills h1 {
-    font-size: 36px; /* حجم العنوان */
+    font-size: 36px; 
     margin-bottom: 40px;
-    font-family: 'Poppins', sans-serif; /* خط حديث */
-    color: #444; /* لون العنوان داكن */
-    font-weight: 600; /* وزن الخط متوسط */
-    letter-spacing: 1px; /* تباعد بين الأحرف */
+    font-family: 'Poppins', sans-serif;
+    color: #444; 
+    font-weight: 600; 
+    letter-spacing: 1px; 
 }
 
 .skill-bar {
-    background-color: #fff; /* خلفية بيضاء لشريط المهارة */
-    border-radius: 25px; /* زوايا مستديرة كبيرة */
-    padding: 15px 20px; /* تباعد داخلي */
+    background-color: #fff; 
+    border-radius: 25px; 
+    padding: 15px 20px; 
     margin: 20px auto;
     width: 80%;
     max-width: 900px;
     position: relative;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* تأثيرات التمرير */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
 
 .skill-bar:hover {
-    transform: translateY(-5px); /* رفع الشريط قليلاً عند التمرير */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* ظل أكثر وضوحًا عند التمرير */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .skill-bar span {
     display: block;
-    font-size: 18px; /* حجم النص */
-    font-weight: 500; /* وزن الخط متوسط */
+    font-size: 18px; 
+    font-weight: 500; 
     margin-bottom: 8px;
-    color: #555; /* النص رمادي داكن */
+    color: #555; 
 }
 
 .skill-bar .progress {
-    background-color: #e0e0e0; /* لون خلفية شريط التقدم */
-    border-radius: 25px; /* زوايا مستديرة للشريط */
+    background-color: #e0e0e0; 
+    border-radius: 25px; 
     height: 20px;
     overflow: hidden;
     position: relative;
@@ -478,95 +446,94 @@ nav ul li a:hover::after {
 
 .skill-bar .progress-bar {
     height: 100%;
-    background-color: #000; /* الشريط نفسه باللون الأسود */
-    width: 0; /* عرض الشريط يبدأ من 0 ويتغير */
-    transition: width 0.6s ease; /* تحسين انتقال عرض الشريط */
-    border-radius: 25px; /* زوايا مستديرة للشريط */
+    background-color: #000; 
+    width: 0; 
+    transition: width 0.6s ease; 
+    border-radius: 25px;
 }
 
 .skill-bar .progress-bar span {
     position: absolute;
-    right: 15px; /* وضع النسبة المئوية على اليمين */
-    color: #fff; /* النص داخل الشريط أبيض */
+    right: 15px; 
+    color: #fff; 
     font-weight: bold;
-    font-size: 14px; /* حجم النص داخل الشريط */
+    font-size: 14px; 
 }
 
-/* تصميم شاشات الهواتف (768 بكسل وأقل) */
 @media (max-width: 768px) {
     #skills {
-        padding: 40px 10px; /* تقليل التباعد الداخلي */
+        padding: 40px 10px;
     }
 
     #skills h1 {
-        font-size: 28px; /* تقليل حجم العنوان */
-        margin-bottom: 30px; /* تقليل المسافة السفلية */
+        font-size: 28px; 
+        margin-bottom: 30px; 
     }
 
     .skill-bar {
-        width: 90%; /* زيادة عرض الشريط ليتناسب مع الشاشة الصغيرة */
-        padding: 10px 15px; /* تقليل التباعد الداخلي */
+        width: 90%; 
+        padding: 10px 15px; 
     }
 
     .skill-bar span {
-        font-size: 16px; /* تقليل حجم النص */
+        font-size: 16px;
     }
 
     .skill-bar .progress {
-        height: 18px; /* تقليل ارتفاع شريط التقدم */
+        height: 18px; 
     }
 
     .skill-bar .progress-bar {
-        border-radius: 15px; /* زوايا مستديرة أصغر */
+        border-radius: 15px; 
     }
 
     .skill-bar .progress-bar span {
-        font-size: 12px; /* تقليل حجم النص داخل الشريط */
-        right: 10px; /* ضبط موقع النص */
+        font-size: 12px; 
+        right: 10px; 
     }
 }
 
 
         #services {
     padding: 100px 20px;
-    background-color: #f9f9f9; /* لون خلفية فاتح */
+    background-color: #f9f9f9; 
     color: #333;
     text-align: center;
 }
 
 #services h1 {
-    font-size: 42px; /* زيادة حجم العنوان */
+    font-size: 42px; 
     margin-bottom: 60px;
-    font-family: 'Poppins', sans-serif; /* خط حديث */
-    color: #111; /* لون داكن */
-    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
-    letter-spacing: 1px; /* زيادة المسافة بين الحروف */
+    font-family: 'Poppins', sans-serif; 
+    color: #111;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
 }
 
 .container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* تفعيل التفاف العناصر في الحاوية */
-    gap: 20px; /* المسافة بين صناديق الخدمات */
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
 .service-box {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 15px; /* زوايا مستديرة */
+    border-radius: 15px; 
     padding: 30px;
     margin: 10px;
-    display: flex; /* استخدام flex لتوزيع المحتوى */
+    display: flex; 
     flex-direction: column;
-    align-items: center; /* توسيط المحتوى */
+    align-items: center; 
     width: 300px;
-    text-align: center; /* توسيط النص */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* ظل أعمق */
-    transition: transform 0.3s ease; /* تأثير الحركة */
+    text-align: center; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
 }
 
 .service-box:hover {
-    transform: translateY(-5px); /* رفع الصندوق عند التمرير */
+    transform: translateY(-5px); 
 }
 
 .service-box h3 {
@@ -576,18 +543,17 @@ nav ul li a:hover::after {
 }
 
 .service-box p {
-    font-size: 16px; /* تقليل حجم النص */
+    font-size: 16px; 
     color: #666;
-    line-height: 1.5; /* زيادة المسافة بين الأسطر */
+    line-height: 1.5; 
 }
 
 .service-box i {
-    font-size: 50px; /* زيادة حجم الأيقونة */
+    font-size: 50px; 
     color: #333;
     margin-bottom: 15px;
 }
 
-/* التصميم العام */
 #contact {
     padding: 80px 20px;
     background-color: #f9f9f9;
@@ -646,12 +612,12 @@ nav ul li a:hover::after {
 }
 
 .input-large {
-    padding: 15px; /* زيادة الحشو لراحة الكتابة */
-    font-size: 18px; /* حجم الخط المتناسق */
+    padding: 15px; 
+    font-size: 18px; 
     border-radius: 5px;
     border: 1px solid #ddd;
-    width: 100%; /* العرض الكامل */
-    box-sizing: border-box; /* تأكيد الحجم الصحيح مع الحشو والحدود */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .contact-form textarea {
@@ -660,7 +626,7 @@ nav ul li a:hover::after {
     border-radius: 5px;
     border: 1px solid #ddd;
     width: 100%;
-    height: 100px; /* ارتفاع ثابت */
+    height: 100px; 
     box-sizing: border-box;
 }
 
@@ -680,8 +646,8 @@ nav ul li a:hover::after {
     transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
-/* تصميم مخصص للشاشات الصغيرة */
-@media (max-width: 600px) {
+
+    @media (max-width: 600px) {
     #contact {
         padding: 40px 10px;
     }
@@ -702,13 +668,12 @@ nav ul li a:hover::after {
 
     .contact-form form {
         width: 100%;
-        gap: 10px; /* مسافة قصيرة جدًا بين الحقول */
+        gap: 10px; 
     }
 
-    /* إضافة تخصيص لحقل الاسم وحقل البريد الإلكتروني فقط */
     .contact-form .input-large:nth-child(1),
     .contact-form .input-large:nth-child(2) {
-        margin-bottom: 5px; /* مسافة قصيرة بين حقل الاسم وحقل البريد الإلكتروني */
+        margin-bottom: 5px; 
     }
 
     .input-large {
@@ -725,8 +690,6 @@ nav ul li a:hover::after {
     }
 }
 
-
-/* تصميم مخصص للشاشات الكبيرة (مثل الكمبيوتر والتابلت) */
 @media (min-width: 768px) {
     #contact {
         padding: 60px 20px;
@@ -744,7 +707,7 @@ nav ul li a:hover::after {
     }
 
     .input-large {
-        width: calc(50% - 10px); /* عرض مناسب للحقول */
+        width: calc(50% - 10px); 
     }
 
     .contact-form textarea {
@@ -758,7 +721,6 @@ nav ul li a:hover::after {
     }
 }
 
-/* تصميم مخصص للشاشات الكبيرة جداً (مثل اللابتوب) */
 @media (min-width: 1200px) {
     #contact {
         padding: 80px 40px;
@@ -776,7 +738,7 @@ nav ul li a:hover::after {
     }
 
     .input-large {
-        width: calc(50% - 10px); /* عرض مناسب للحقول */
+        width: calc(50% - 10px); 
         font-size: 18px;
     }
 
@@ -797,23 +759,21 @@ nav ul li a:hover::after {
     background-color: #333;
     color: #fff;
     text-align: center;
-    font-size: 14px; /* حجم الخط الأساسي */
-    font-family: Arial, sans-serif; /* نوع الخط */
+    font-size: 14px; 
+    font-family: Arial, sans-serif; 
 }
 
-/* تصميم مخصص للشاشات الصغيرة */
 @media (max-width: 600px) {
     footer {
-        padding: 15px; /* تقليل الحشو قليلاً على الشاشات الصغيرة */
-        font-size: 12px; /* تصغير حجم الخط لجعل النص مناسباً */
+        padding: 15px; 
+        font-size: 12px; 
     }
 }
 
-/* تصميم مخصص للشاشات الكبيرة */
 @media (min-width: 768px) {
     footer {
-        padding: 30px; /* زيادة الحشو على الشاشات الكبيرة */
-        font-size: 16px; /* تكبير حجم الخط لجعله أكثر وضوحًا */
+        padding: 30px; 
+        font-size: 16px; 
     }
 }
 
@@ -848,9 +808,9 @@ nav ul li a:hover::after {
             <a href="https://github.com/SEIbrahimSobhi" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </section>
-<!-- سهم العودة إلى أعلى -->
-<a href="#" class="back-to-top" id="backToTop">
-    <i class="fas fa-chevron-up"></i> <!-- أيقونة السهم من Font Awesome -->
+
+    <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i> 
 </a>
 
     <section id="about">
@@ -891,17 +851,8 @@ nav ul li a:hover::after {
 <div class="skill-bar">
     <span>JavaScript</span>
     <div class="progress">
-        <div class="progress-bar" style="width: 70%;">
-            <span>70%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>TypeScript</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 75%;">
-            <span>75%</span>
+        <div class="progress-bar" style="width: 85%;">
+            <span>85%</span>
         </div>
     </div>
 </div>
@@ -909,8 +860,8 @@ nav ul li a:hover::after {
 <div class="skill-bar">
     <span>Python</span>
     <div class="progress">
-        <div class="progress-bar" style="width: 95%;">
-            <span>95%</span>
+        <div class="progress-bar" style="width: 100%;">
+            <span>100%</span>
         </div>
     </div>
 </div>
@@ -934,7 +885,7 @@ nav ul li a:hover::after {
 </div>
 
 <div class="skill-bar">
-    <span>Ruby</span>
+    <span>C#</span>
     <div class="progress">
         <div class="progress-bar" style="width: 80%;">
             <span>80%</span>
@@ -943,67 +894,15 @@ nav ul li a:hover::after {
 </div>
 
 <div class="skill-bar">
-    <span>C#</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 70%;">
-            <span>70%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
     <span>Java</span>
     <div class="progress">
         <div class="progress-bar" style="width: 70%;">
-            <span>70%</span>
+            <span>80%</span>
         </div>
     </div>
 </div>
 
-<div class="skill-bar">
-    <span>Rust</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 55%;">
-            <span>55%</span>
-        </div>
-    </div>
-</div>
 
-<div class="skill-bar">
-    <span>Go</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 65%;">
-            <span>65%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>Kotlin</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 65%;">
-            <span>65%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>Swift</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 60%;">
-            <span>60%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>Linux</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 60%;">
-            <span>60%</span>
-        </div>
-    </div>
-</div>
 
     <section id="services">
         <h1>Services</h1>
@@ -1053,7 +952,6 @@ nav ul li a:hover::after {
     </div>
 
     <div class="contact-form">
-        <!-- قم بتحديث السطر التالي مع عنوان النموذج الخاص بك -->
         <form action="https://formspree.io/f/xnnayory" method="POST">
             <div class="form-row">
                 <input type="text" name="name" class="input-large" placeholder="Your Name" required>
@@ -1067,8 +965,9 @@ nav ul li a:hover::after {
 
 
     <footer>
-        Copy Right 2024 © By Ebrahem Sobhy All Rights Reserved
-    </footer><!-- Google tag (gtag.js) -->
+        Copy Right 2025 © By Ebrahem Sobhy All Rights Reserved
+    </footer>
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7WSVR1G6ZK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1081,13 +980,11 @@ nav ul li a:hover::after {
      <script>
 
         document.addEventListener('DOMContentLoaded', function() {
-    // سكربت قائمة التنقل
     document.getElementById('menu-toggle').addEventListener('click', function() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('active');
     });
 
-    // كود إظهار السهم عند النزول وإخفاؤه عند الصعود
     window.onscroll = function() {
         let backToTopButton = document.getElementById("backToTop");
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -1097,13 +994,11 @@ nav ul li a:hover::after {
         }
     };
 
-    // كود لإعادة المستخدم إلى أعلى الصفحة عند الضغط على السهم
     document.getElementById("backToTop").onclick = function(e) {
         e.preventDefault();
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
-    // كود Typewriter
     var typed = new Typed('.typing', {
         strings: ['Ebrahem Sobhy', 'Developer', 'Designer', 'Freelancer'],
         typeSpeed: 50,
@@ -1111,45 +1006,39 @@ nav ul li a:hover::after {
         loop: true
     });
 
-    // دالة التعامل مع إرسال النموذج
     function handleSubmit(event) {
-        event.preventDefault(); // منع إرسال النموذج بشكل افتراضي
+        event.preventDefault(); 
 
-        // الحصول على النموذج
         const form = document.getElementById('contact-form');
 
-        // الحصول على عناصر واجهة المستخدم
         const submitButton = document.getElementById('submit-button');
         const confirmationMessage = document.getElementById('confirmation-message');
         const loadingSpinner = document.getElementById('loading-spinner');
 
-        // عرض تحميل أثناء الإرسال
-        submitButton.disabled = true; // تعطيل زر الإرسال لتجنب تعدد النقرات
-        loadingSpinner.style.display = 'block'; // عرض عنصر التحميل
+        submitButton.disabled = true; 
+        loadingSpinner.style.display = 'block'; 
 
-        // إرسال النموذج عبر Fetch API
         fetch(form.action, {
             method: 'POST',
             body: new FormData(form),
         })
         .then(response => {
             if (response.ok) {
-                confirmationMessage.style.display = 'block'; // عرض رسالة التأكيد
-                form.reset(); // إعادة تعيين النموذج بعد الإرسال
+                confirmationMessage.style.display = 'block'; 
+                form.reset(); 
             } else {
                 throw new Error('حدث خطأ أثناء إرسال النموذج.');
             }
         })
         .catch(error => {
-            alert(error.message); // عرض رسالة الخطأ للمستخدم
+            alert(error.message); 
         })
         .finally(() => {
-            loadingSpinner.style.display = 'none'; // إخفاء عنصر التحميل
-            submitButton.disabled = false; // إعادة تفعيل زر الإرسال
+            loadingSpinner.style.display = 'none'; 
+            submitButton.disabled = false; 
         });
     }
 
-    // ربط دالة handleSubmit بنموذج الاتصال
     const form = document.getElementById('contact-form');
     if (form) {
         form.addEventListener('submit', handleSubmit);
