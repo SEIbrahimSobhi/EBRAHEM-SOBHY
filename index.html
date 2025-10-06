@@ -37,6 +37,15 @@
             font-family: Arial, sans-serif;
             color: #fff;
             background-color: #333;
+            }
+
+            html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* حتى لا يظهر بياض */
+}
+
 
 nav {
     position: fixed;
@@ -66,7 +75,7 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; 
+    display: flex;
 }
 
 nav ul li {
@@ -111,16 +120,16 @@ nav ul li a:hover::after {
     }
 
     nav ul li {
-        margin-left: 20px; 
+        margin-left: 20px;
     }
 }
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         cursor: pointer;
-        align-self: center; 
-        z-index: 1001; 
+        align-self: center;
+        z-index: 1001;
     }
 
     .menu-toggle .bar {
@@ -131,61 +140,60 @@ nav ul li a:hover::after {
         transition: 0.3s;
     }
 
-    nav ul {
-        display: none; 
-        flex-direction: column;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 20px 0; 
-        align-items: center; 
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        z-index: 1000; 
-        transition: max-height 0.3s ease-out; 
-        max-height: 0; 
-        overflow: hidden; 
-    }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
 
-    nav ul.active {
-        display: flex; 
-        max-height: 500px; 
-    }
+  nav ul.active {
+    display: flex;
+    max-height: 500px;
+  }
 
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 15px; 
-    }
+  nav ul li {
+    margin: 0;
+    padding: 12px 0;
+    text-align: center;
+  }
 
     nav ul li a {
-        font-size: 20px; 
-        padding: 12px 20px; 
-        text-align: center; 
+        font-size: 20px;
+        padding: 12px 20px;
+        text-align: center;
     }
 }
-            
+
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none; 
-    width: 60px; 
-    height: 60px; 
-    background-color: #000; 
-    color: #fff; 
+    display: none;
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    color: #fff;
     text-align: center;
     line-height: 60px;
-    font-size: 28px; 
-    border-radius: 50%; 
+    font-size: 28px;
+    border-radius: 50%;
     z-index: 100;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .back-to-top:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
@@ -196,39 +204,39 @@ nav ul li a:hover::after {
 
 @media (max-width: 600px) {
     .back-to-top {
-        width: 50px; 
+        width: 50px;
         height: 50px;
-        font-size: 24px; 
-        bottom: 15px; 
-        right: 15px; 
-        line-height: 50px; 
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+        line-height: 50px;
     }
 }
 
 @media (min-width: 1200px) {
     .back-to-top {
-        width: 70px; 
+        width: 70px;
         height: 70px;
-        font-size: 30px; 
-        bottom: 30px; 
-        right: 30px; 
+        font-size: 30px;
+        bottom: 30px;
+        right: 30px;
         line-height: 70px;
     }
 }
 
 #home {
-    height: 100vh; 
+    height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                      url('images/welcome.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-blend-mode: darken; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    padding: 0 20px; 
+                      url('images/welcome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
 }
 
 #home h1 {
@@ -248,51 +256,51 @@ nav ul li a:hover::after {
 }
 
 .typing {
-    color: #fff; 
+    color: #fff;
     font-weight: bold;
-    font-size: 55px; 
+    font-size: 55px;
 }
 
 @media (max-width: 768px) {
     #home {
-        background-position: 80% center; 
+        background-position: 80% center;
     }
 
     #home h1 {
-        font-size: 40px; 
+        font-size: 40px;
     }
 
     #home h2 {
-        font-size: 30px; 
+        font-size: 30px;
     }
 
     .typing {
-        font-size: 40px; 
+        font-size: 40px;
     }
 }
 
         .social-icons {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     padding: 10px;
 }
 
 .social-icons a {
-    color: #fff; 
-    font-size: 24px; 
-    margin: 0 10px; 
-    text-decoration: none; 
-    transition: transform 0.3s ease; 
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
     #about {
     padding: 80px 20px;
-    background-color: #fff; 
-    color: #333; 
+    background-color: #fff;
+    color: #333;
 }
 
 #about .container {
@@ -308,9 +316,9 @@ nav ul li a:hover::after {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 5px solid #333; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-    object-fit: cover; 
+    border: 5px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
 }
 
 #about .info {
@@ -318,28 +326,28 @@ nav ul li a:hover::after {
 }
 
 #about .info h1 {
-    font-size: 36px; 
+    font-size: 36px;
     margin-bottom: 10px;
-    color: #222; 
+    color: #222;
 }
 
 #about .info h2 {
-    font-size: 24px; 
+    font-size: 24px;
     margin-bottom: 20px;
-    color: #444; 
+    color: #444;
 }
 
 #about .info p {
-    font-size: 18px; 
-    line-height: 1.6; 
+    font-size: 18px;
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .button {
-    padding: 12px 24px; 
+    padding: 12px 24px;
     text-decoration: none;
     font-size: 18px;
-    border-radius: 8px; 
+    border-radius: 8px;
     display: inline-block;
     margin-right: 10px;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
@@ -347,98 +355,98 @@ nav ul li a:hover::after {
 
 .button.white {
     background-color: #fff;
-    color: #333; 
+    color: #333;
     border: 2px solid #333;
 }
 
 .button.contact-me {
-    background-color: #333; 
+    background-color: #333;
     color: #fff;
-    border: 2px solid transparent; 
+    border: 2px solid transparent;
 }
 
 .button.contact-me:hover {
-    background-color: #555; 
-    color: #fff; 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    background-color: #555;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .royal-blue-text {
     font-size: 24px;
-    font-weight: bold; 
-    background: linear-gradient(45deg, #0033cc, #00bfff); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
+    font-weight: bold;
+    background: linear-gradient(45deg, #0033cc, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 768px) {
     #about .container {
-        flex-direction: column; 
-        text-align: center; 
+        flex-direction: column;
+        text-align: center;
     }
 
     #about .profile img {
-        width: 200px; 
+        width: 200px;
         height: 200px;
     }
 
     #about .info h1 {
-        font-size: 28px; 
+        font-size: 28px;
     }
 
     #about .info h2 {
-        font-size: 20px; 
+        font-size: 20px;
     }
 
     #about .info p {
-        font-size: 16px; 
+        font-size: 16px;
     }
 }
 
 #skills {
     padding: 80px 20px;
-    background-color: #fafafa; 
-    color: #333; 
+    background-color: #fafafa;
+    color: #333;
     text-align: center;
 }
 
 #skills h1 {
-    font-size: 36px; 
+    font-size: 36px;
     margin-bottom: 40px;
     font-family: 'Poppins', sans-serif;
-    color: #444; 
-    font-weight: 600; 
-    letter-spacing: 1px; 
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .skill-bar {
-    background-color: #fff; 
-    border-radius: 25px; 
-    padding: 15px 20px; 
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 15px 20px;
     margin: 20px auto;
     width: 80%;
     max-width: 900px;
     position: relative;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1); 
-    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .skill-bar:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .skill-bar span {
     display: block;
-    font-size: 18px; 
-    font-weight: 500; 
+    font-size: 18px;
+    font-weight: 500;
     margin-bottom: 8px;
-    color: #555; 
+    color: #555;
 }
 
 .skill-bar .progress {
-    background-color: #e0e0e0; 
-    border-radius: 25px; 
+    background-color: #e0e0e0;
+    border-radius: 25px;
     height: 20px;
     overflow: hidden;
     position: relative;
@@ -446,18 +454,18 @@ nav ul li a:hover::after {
 
 .skill-bar .progress-bar {
     height: 100%;
-    background-color: #000; 
-    width: 0; 
-    transition: width 0.6s ease; 
+    background-color: #000;
+    width: 0;
+    transition: width 0.6s ease;
     border-radius: 25px;
 }
 
 .skill-bar .progress-bar span {
     position: absolute;
-    right: 15px; 
-    color: #fff; 
+    right: 15px;
+    color: #fff;
     font-weight: bold;
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -466,13 +474,13 @@ nav ul li a:hover::after {
     }
 
     #skills h1 {
-        font-size: 28px; 
-        margin-bottom: 30px; 
+        font-size: 28px;
+        margin-bottom: 30px;
     }
 
     .skill-bar {
-        width: 90%; 
-        padding: 10px 15px; 
+        width: 90%;
+        padding: 10px 15px;
     }
 
     .skill-bar span {
@@ -480,60 +488,60 @@ nav ul li a:hover::after {
     }
 
     .skill-bar .progress {
-        height: 18px; 
+        height: 18px;
     }
 
     .skill-bar .progress-bar {
-        border-radius: 15px; 
+        border-radius: 15px;
     }
 
     .skill-bar .progress-bar span {
-        font-size: 12px; 
-        right: 10px; 
+        font-size: 12px;
+        right: 10px;
     }
 }
 
 
         #services {
     padding: 100px 20px;
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
     color: #333;
     text-align: center;
 }
 
 #services h1 {
-    font-size: 42px; 
+    font-size: 42px;
     margin-bottom: 60px;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     color: #111;
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
-    gap: 20px; 
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .service-box {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 15px; 
+    border-radius: 15px;
     padding: 30px;
     margin: 10px;
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     width: 300px;
-    text-align: center; 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease; 
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .service-box:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
 .service-box h3 {
@@ -543,13 +551,13 @@ nav ul li a:hover::after {
 }
 
 .service-box p {
-    font-size: 16px; 
+    font-size: 16px;
     color: #666;
-    line-height: 1.5; 
+    line-height: 1.5;
 }
 
 .service-box i {
-    font-size: 50px; 
+    font-size: 50px;
     color: #333;
     margin-bottom: 15px;
 }
@@ -612,12 +620,12 @@ nav ul li a:hover::after {
 }
 
 .input-large {
-    padding: 15px; 
-    font-size: 18px; 
+    padding: 15px;
+    font-size: 18px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    width: 100%; 
-    box-sizing: border-box; 
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-form textarea {
@@ -626,7 +634,7 @@ nav ul li a:hover::after {
     border-radius: 5px;
     border: 1px solid #ddd;
     width: 100%;
-    height: 100px; 
+    height: 100px;
     box-sizing: border-box;
 }
 
@@ -668,12 +676,12 @@ nav ul li a:hover::after {
 
     .contact-form form {
         width: 100%;
-        gap: 10px; 
+        gap: 10px;
     }
 
     .contact-form .input-large:nth-child(1),
     .contact-form .input-large:nth-child(2) {
-        margin-bottom: 5px; 
+        margin-bottom: 5px;
     }
 
     .input-large {
@@ -707,7 +715,7 @@ nav ul li a:hover::after {
     }
 
     .input-large {
-        width: calc(50% - 10px); 
+        width: calc(50% - 10px);
     }
 
     .contact-form textarea {
@@ -738,7 +746,7 @@ nav ul li a:hover::after {
     }
 
     .input-large {
-        width: calc(50% - 10px); 
+        width: calc(50% - 10px);
         font-size: 18px;
     }
 
@@ -754,31 +762,33 @@ nav ul li a:hover::after {
     }
 }
 
-        footer {
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    font-size: 14px; 
-    font-family: Arial, sans-serif; 
+footer {
+  flex-shrink: 0;
+  background-color: #111;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
 }
+
 
 @media (max-width: 600px) {
     footer {
-        padding: 15px; 
-        font-size: 12px; 
+        padding: 15px;
+        font-size: 12px;
     }
 }
 
 @media (min-width: 768px) {
     footer {
-        padding: 30px; 
-        font-size: 16px; 
+        padding: 30px;
+        font-size: 16px;
     }
 }
 
     </style>
 <body>
+  <div class="site-wrapper">
+    <main class="site-content">
     <nav>
         <div class="container">
             <div class="name">EBRAHEM</div>
@@ -816,7 +826,7 @@ nav ul li a:hover::after {
     <section id="about">
         <div class="container">
             <div class="profile">
-                <img src="Me.jpg" alt="Ebrahem Sobhy">
+                <img src="images/Me.jpg" alt="Ebrahem Sobhy">
             </div>
             <div class="info">
                 <h1>About Me</h1>
@@ -963,6 +973,7 @@ nav ul li a:hover::after {
     </div>
 </section>
 
+    </main>
 
     <footer>
         Copy Right 2025 © By Ebrahem Sobhy All Rights Reserved
