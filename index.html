@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Ebrahem Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
+    <meta name="description" content="Explore Ibrahim Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
     <meta name="keywords" content="Ebrahem Sobhy, web developer, portfolio, personal website, ebrahem sobhy, Ebrahim Sobhy, ابراهيم صبحي, إبراهيم صبحي, المبرمج ابراهيم, Hacker B13 Man, Hacker Ebrahem, ebrahem hacker, الباشمهندس ابراهيم">
-    <meta name="author" content="Ebrahem Sobhy">
+    <meta name="author" content="Ibrahim Sobhy">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ebrahem Sobhy</title>
+    <title>Ibrahim Sobhy</title>
 
-    <meta property="og:title" content="Ebrahem Sobhy">
-    <meta property="og:description" content="Explore Ebrahem Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
+    <meta property="og:title" content="Ibrahim Sobhy">
+    <meta property="og:description" content="Explore Ibrahim Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
     <meta property="og:image" content="images/mybloglogo.webp">
     <meta property="og:url" content="https://ebrahem-sobhy.vercel.app/">
     <meta property="og:type" content="website">
-    <meta property="og:image:alt" content="A professional image representing Ebrahem Sobhy's portfolio">
+    <meta property="og:image:alt" content="A professional image representing Ibrahim Sobhy's portfolio">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ebrahem Sobhy">
-    <meta name="twitter:description" content="Explore Ebrahem Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
+    <meta name="twitter:title" content="Ibrahim Sobhy">
+    <meta name="twitter:description" content="Explore Ibrahim Sobhy's portfolio showcasing expertise in web development, innovative projects, and professional design skills.">
     <meta name="twitter:image" content="images/mybloglogo.webp">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -32,6 +32,60 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
 
+    :root{
+  --reveal-ease: cubic-bezier(.2,.95,.2,1);
+  --reveal-duration: 0.6s;
+  --reveal-stagger: 0.08s;
+  --reveal-distance: 18px;
+}
+/* Reveal — improved to avoid flash + controllable timing */
+.reveal{
+  /* احرص أن خلفية القسم دائماً بيضاء أو قابلة للّون عبر --section-bg */
+  background: var(--section-bg, #fff);
+  overflow: hidden;            /* <-- يمنع الوميض/الخلفية الظاهرة عند الحركة */
+  position: relative;
+  --duration: 0.7s;           /* مدة الحركة الافتراضية */
+  --stagger: 0.09s;           /* تباعد التتابع الافتراضي */
+  --base-delay: 0s;           /* يمكن ضبطه عبر data-delay */
+}
+
+/* لا نحرك الصندوق نفسه — فقط عناصره الداخلية */
+.reveal .reveal-item{
+  opacity: 0;
+  transform: translateY(14px) scale(.997);
+  transition-property: opacity, transform, clip-path;
+  transition-duration: var(--duration);
+  transition-timing-function: cubic-bezier(.2,.95,.2,1);
+  transition-delay: var(--delay, 0s); /* يتم ملؤها من JS */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* عند الظهور */
+.reveal.in-view .reveal-item{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: var(--delay, 0s);
+}
+
+/* progress-bar style: لا نعدل transition هنا عبر JS */
+.progress-bar{
+  width: 0%;
+  transition: width 1.2s ease-in-out; /* ثابت وجيد */
+}
+
+/* يقلل الحركة على الأجهزة التي تطلب تقليل الحركة */
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal .reveal-item, .progress-bar { transition: none !important; transform: none !important; opacity: 1 !important; }
+}
+
+/* responsive tweak: أصغر إزاحة على الشاشات الصغيرة */
+@media (max-width: 480px){
+  .reveal .reveal-item{
+    transform: translateY(8px) scale(.998);
+  }
+  .reveal{ --stagger: 0.06s; --duration: 0.56s; }
+}
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -47,6 +101,7 @@
 }
 
 
+/* ====== قاعدة عامة ونمط الـnav ====== */
 nav {
     position: fixed;
     width: 100%;
@@ -173,55 +228,55 @@ nav ul li a:hover::after {
     }
 }
 
+/* OPEN state -> transform bars into X (middle fades) */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(.2);
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle .bar { transition: none !important; }
+}
+/* ---------- back to top (smaller & nicer) ---------- */
 .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    width: 60px;
-    height: 60px;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    line-height: 60px;
-    font-size: 28px;
-    border-radius: 50%;
-    z-index: 100;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(0,0,0,0.66);
+  color: #fff;
+  border-radius: 9px;
+  box-shadow: 0 8px 22px rgba(3,6,12,0.25);
+  transform: translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .22s ease, opacity .22s ease;
+  z-index: 999;
+  text-decoration: none;
 }
-
-.back-to-top:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+.back-to-top.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
+.back-to-top svg { width: 18px; height: 18px; display:block; }
 
-.back-to-top i {
-    display: inline-block;
-    vertical-align: middle;
-}
+/* hover */
+.back-to-top:hover { transform: translateY(-3px); }
 
-@media (max-width: 600px) {
-    .back-to-top {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        bottom: 15px;
-        right: 15px;
-        line-height: 50px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .back-to-top {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-        bottom: 30px;
-        right: 30px;
-        line-height: 70px;
-    }
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .menu-toggle .bar, .back-to-top { transition: none !important; }
 }
 
 #home {
@@ -256,9 +311,13 @@ nav ul li a:hover::after {
 }
 
 .typing {
-    color: #fff;
-    font-weight: bold;
-    font-size: 55px;
+  font-weight: 700;
+  /* حجم ديناميكي بين 18px و45px */
+  font-size: clamp(18px, 6vw, 45px);
+  white-space: normal; /* يسمح بالانكسار على الشاشات الضيقة */
+  max-width: 100%;
+  display: inline-block;
+  line-height: 1.1;
 }
 
 @media (max-width: 768px) {
@@ -271,11 +330,14 @@ nav ul li a:hover::after {
     }
 
     #home h2 {
-        font-size: 30px;
+        font-size: 25px;
+        line-height: 1.4;
+        padding: 0 15px;
     }
 
     .typing {
-        font-size: 40px;
+        font-size: 29px;
+        white-space: normal;
     }
 }
 
@@ -371,12 +433,13 @@ nav ul li a:hover::after {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.royal-blue-text {
-    font-size: 24px;
-    font-weight: bold;
-    background: linear-gradient(45deg, #0033cc, #00bfff);
+.name-highlight {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(45deg, #007BFF, #00E0FF, #0056b3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
@@ -454,7 +517,8 @@ nav ul li a:hover::after {
 
 .skill-bar .progress-bar {
     height: 100%;
-    background-color: #000;
+    background: linear-gradient(90deg, #007BFF, #00E0FF);
+    box-shadow: 0 0 10px rgba(0,123,255,0.5);
     width: 0;
     transition: width 0.6s ease;
     border-radius: 25px;
@@ -499,6 +563,36 @@ nav ul li a:hover::after {
         font-size: 12px;
         right: 10px;
     }
+}
+
+.progress {
+  background: #e6e6e6;
+  border-radius: 999px;
+  overflow: hidden;
+  height: 12px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg,#4f46e5,#06b6d4); /* أو لون اللي تحب */
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  box-sizing: border-box;
+  font-size: 11px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* لو بدك تسمح بوجود نص داخل الشريط */
+.progress-bar .percent-label {
+  font-weight: 600;
+  font-size: 11px;
 }
 
 
@@ -560,6 +654,74 @@ nav ul li a:hover::after {
     font-size: 50px;
     color: #333;
     margin-bottom: 15px;
+}
+
+.service-box {
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 40px 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.service-box i {
+    font-size: 55px;
+    background: linear-gradient(45deg,#007BFF,#00E0FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Tablet */
+@media (max-width: 992px) {
+
+    #services h1 {
+        font-size: 34px;
+    }
+
+    .service-box {
+        width: 45%;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    #services {
+        padding: 80px 15px;
+    }
+
+    #services h1 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        gap: 15px;
+    }
+
+    .service-box {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .service-box i {
+        font-size: 45px;
+    }
+
+    .service-box h3 {
+        font-size: 20px;
+    }
+
+    .service-box p {
+        font-size: 15px;
+    }
+
 }
 
 #contact {
@@ -639,20 +801,20 @@ nav ul li a:hover::after {
 }
 
 .contact-form button {
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    background-color: #111;
+    color: #00E0FF;
+    border: 1px solid #00E0FF;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #555;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #00E0FF;
+    color: #111;
+    box-shadow: 0 0 20px #00E0FF;
 }
 
     @media (max-width: 600px) {
@@ -791,15 +953,15 @@ footer {
     <main class="site-content">
     <nav>
         <div class="container">
-            <div class="name">EBRAHEM</div>
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="name">IBRAHIM</div>
+            <div id="menu-toggle" class="menu-toggle" role="button" tabindex="0" aria-label="Toggle navigation" aria-expanded="false">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Profile</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -807,10 +969,10 @@ footer {
         </div>
     </nav>
 
-    <section id="home">
-        <h1>Hello</h1>
-        <h2>I Am <span class="typing"></span></h2>
-        <div class="social-icons">
+    <section class="reveal" data-delay="0.12" data-stagger="0.12" data-duration="0.9" id="home">
+        <h1 class="reveal-item">Hello</h1>
+        <h2 class="reveal-item">I Am <span class="typing"></span></h2>
+        <div class="social-icons reveal-item">
             <a href="https://www.facebook.com/share/ipBmpRx8n7BcxkjU/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://x.com/SeEbrahemsobhy?t=aSR-AWtje-9G4yLV65mvmQ&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/ibrahim-sobhy-468b94381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -823,136 +985,119 @@ footer {
     <i class="fas fa-chevron-up"></i> 
 </a>
 
-    <section id="about">
+    <section class="reveal" data-delay="0.08" data-stagger="0.08" data-duration="0.7" id="about">
         <div class="container">
             <div class="profile">
-                <img src="images/Me.jpg" alt="Ebrahem Sobhy">
+                <img src="images/Me.jpg" alt="Ibrahim Sobhy" loading="lazy" width="300" height="300">
             </div>
-            <div class="info">
-                <h1>About Me</h1>
-                <h2>Student and Website Developer</h2>
-                <p>I am <span class="royal-blue-text">Ibrahim Sobhi</span>, a third-year secondary school student and website developer. I love designing and developing websites that are easy to use and visually attractive, and I always strive to improve my skills by working on innovative projects.</p>
-                <a href="mailto:seebrahemsobhy@gmail.com" class="button contact-me">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <div id="skills">
-    <h1>My Skills</h1>
-
-    <div class="skill-bar">
-    <span>HTML</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 100%;">
-            <span>100%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>CSS</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 95%;">
-            <span>95%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>JavaScript</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 85%;">
-            <span>85%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>Python</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 100%;">
-            <span>100%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>PHP</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 80%;">
-            <span>80%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>SQL</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 85%;">
-            <span>85%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>C#</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 80%;">
-            <span>80%</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-bar">
-    <span>Java</span>
-    <div class="progress">
-        <div class="progress-bar" style="width: 70%;">
-            <span>80%</span>
-        </div>
-    </div>
-</div>
-
-
-
-    <section id="services">
-        <h1>Services</h1>
-        <div class="container">
-            <div class="service-box">
-                <i class="bi bi-code-slash"></i>
-                <h3>WEB DEVELOPMENT</h3>
-                <p>Transform your ideas into reality with custom-built websites that are not only functional but also visually appealing. My web development services cover everything from front-end to back-end development.</p>
-            </div>
-            <div class="service-box">
-                <i class="bi bi-paint-bucket"></i>
-                <h3>DESIGN & UX</h3>
-                <p>Create engaging user experiences and stunning designs that captivate your audience. I focus on user-centered design principles to ensure your website or application is both usable and beautiful.</p>
-            </div>
-            <div class="service-box">
-                <i class="bi bi-gear"></i>
-                <h3>MAINTENANCE & SUPPORT</h3>
-                <p>Keep your website running smoothly with ongoing maintenance and support. I offer reliable services to troubleshoot issues, update content, and ensure optimal performance.</p>
+            <div class="info reveal-item">
+                <h1 class="reveal-item">About Me</h1>
+                <h2 class="reveal-item">Student and Website Developer</h2>
+                <p class="reveal-item">I am <span class="name-highlight">Ibrahim Sobhi</span>, a third-year secondary school student and website developer. I love designing and developing websites that are easy to use and visually attractive, and I always strive to improve my skills by working on innovative projects.</p>
+                <a href="mailto:seebrahemsobhy@gmail.com" class="button contact-me reveal-item">Contact Me</a>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-    <h1>Contact Us</h1>
-    <div class="contact-details">
-        <div class="contact-detail">
+<section class="reveal" data-delay="0.05" data-stagger="0.07" data-duration="0.6" id="skills" aria-labelledby="skills-heading">
+  <h1 id="skills-heading" class="reveal-item">Technical Expertise</h1>
+
+  <div class="skill-bar reveal-item">
+    <span class="skill-title">Frontend Development (HTML, CSS, JS, UI/UX)</span>
+    <div class="progress" role="group" aria-label="Frontend skill level">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-w="95">
+        <span class="percent-label">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-bar reveal-item">
+    <span class="skill-title">Backend Development (PHP, Node.js, Databases)</span>
+    <div class="progress" role="group" aria-label="Backend skill level">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-w="90">
+        <span class="percent-label">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-bar reveal-item">
+    <span class="skill-title">Database Engineering (MySQL, SQL Server)</span>
+    <div class="progress" role="group" aria-label="Database skill level">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-w="90">
+        <span class="percent-label">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-bar reveal-item">
+    <span class="skill-title">Cyber Security & Ethical Hacking</span>
+    <div class="progress" role="group" aria-label="Cyber security skill level">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-w="92">
+        <span class="percent-label">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-bar reveal-item">
+    <span class="skill-title">Secure System Architecture</span>
+    <div class="progress" role="group" aria-label="Architecture skill level">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-w="88">
+        <span class="percent-label">0%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="reveal" data-delay="0.06" data-stagger="0.1" data-duration="0.65" id="services">
+    <h1 class="reveal-item">Professional Services</h1>
+    <div class="container">
+
+        <div class="service-box reveal-item">
+            <i class="bi bi-code-slash"></i>
+            <h3>Full Stack Web Development</h3>
+            <p>Designing and developing secure, scalable, and high-performance web applications from frontend to backend.</p>
+        </div>
+
+        <div class="service-box reveal-item">
+            <i class="bi bi-shield-lock"></i>
+            <h3>Cyber Security Solutions</h3>
+            <p>Protecting websites and systems from vulnerabilities through security hardening and best practices.</p>
+        </div>
+
+        <div class="service-box reveal-item">
+            <i class="bi bi-bug"></i>
+            <h3>Ethical Hacking & Penetration Testing</h3>
+            <p>Identifying and fixing security flaws before attackers can exploit them.</p>
+        </div>
+
+        <div class="service-box reveal-item">
+            <i class="bi bi-diagram-3"></i>
+            <h3>System Architecture</h3>
+            <p>Building secure backend structures and database systems optimized for performance and scalability.</p>
+        </div>
+
+    </div>
+</section>
+
+    <section class="reveal" data-delay="0.08" data-stagger="0.09" data-duration="0.7" id="contact">
+    <h1 class="reveal-item">Contact Us</h1>
+    <div class="contact-details reveal-item">
+        <div class="contact-detail reveal-item">
             <a href="https://maps.app.goo.gl/y9jPL1u1ijksjbUn6">
                 <i class="bi bi-geo-alt"></i>
                 <h3>Address</h3>
                 <p>Mohalat Ziad, Samannoud, Al Gharbiyah</p>
             </a>
         </div>
-        <div class="contact-detail">
+        <div class="contact-detail reveal-item">
             <a href="mailto:seebrahemsobhy@gmail.com">
                 <i class="bi bi-envelope"></i>
                 <h3>Email</h3>
                 <p>seebrahemsobhy@gmail.com</p>
             </a>
         </div>
-        <div class="contact-detail">
+        <div class="contact-detail reveal-item">
             <a href="tel:+201128471221">
                 <i class="bi bi-telephone"></i>
                 <h3>Phone</h3>
@@ -961,8 +1106,8 @@ footer {
         </div>
     </div>
 
-    <div class="contact-form">
-        <form action="https://formspree.io/f/xnnayory" method="POST">
+    <div class="contact-form reveal-item">
+        <form id="contact-form" action="https://formspree.io/f/xnnayory" method="POST">
             <div class="form-row">
                 <input type="text" name="name" class="input-large" placeholder="Your Name" required>
                 <input type="email" name="email" class="input-large" placeholder="Your Email" required>
@@ -976,8 +1121,9 @@ footer {
     </main>
 
     <footer>
-        Copy Right 2025 © By Ebrahem Sobhy All Rights Reserved
+        Copy Right <span id="year"></span> © By Ibrahim All Rights Reserved
     </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7WSVR1G6ZK"></script>
 <script>
@@ -989,73 +1135,263 @@ footer {
 </script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
      <script>
+document.addEventListener('DOMContentLoaded', () => {
 
-        document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
+/* =========================
+   Google Analytics (Safe Load)
+========================= */
+
+const GA_ID = 'G-7WSVR1G6ZK';
+
+function loadGtagOnce(){
+
+  if (!navigator.onLine) return;
+  if (window._gtagLoaded) return;
+
+  window._gtagLoaded = true;
+
+  const s = document.createElement('script');
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  s.async = true;
+
+  s.onload = () => {
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+
+  };
+
+  s.onerror = () => console.warn('gtag failed to load');
+
+  document.head.appendChild(s);
+
+}
+
+loadGtagOnce();
+window.addEventListener('online', loadGtagOnce);
+
+
+
+/* =========================
+   Menu Toggle
+========================= */
+
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if(menuToggle && navLinks){
+
+  const toggleMenu = (force)=>{
+
+    const open =
+      typeof force === 'boolean'
+        ? force
+        : !menuToggle.classList.contains('open');
+
+    menuToggle.classList.toggle('open', open);
+    navLinks.classList.toggle('active', open);
+    menuToggle.setAttribute('aria-expanded', open);
+
+  };
+
+  menuToggle.addEventListener('click', e=>{
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  menuToggle.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  document.addEventListener('click', e=>{
+
+    if(!menuToggle.classList.contains('open')) return;
+
+    const inside =
+      menuToggle.contains(e.target) ||
+      navLinks.contains(e.target);
+
+    if(!inside) toggleMenu(false);
+
+  });
+
+  window.addEventListener('resize', ()=>{
+    if(window.innerWidth >= 769) toggleMenu(false);
+  });
+
+}
+
+
+
+/* =========================
+   Smooth Scroll
+========================= */
+
+document.querySelectorAll('.nav-links a').forEach(link=>{
+
+  link.addEventListener('click', e=>{
+
+    const id = link.getAttribute('href');
+
+    if(!id.startsWith('#')) return;
+
+    const section = document.querySelector(id);
+    if(!section) return;
+
+    e.preventDefault();
+
+    const navHeight = document.querySelector('nav').offsetHeight;
+
+    const top =
+      section.offsetTop - navHeight - 5;
+
+    window.scrollTo({
+      top,
+      behavior:'smooth'
     });
 
-    window.onscroll = function() {
-        let backToTopButton = document.getElementById("backToTop");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    };
+  });
 
-    document.getElementById("backToTop").onclick = function(e) {
-        e.preventDefault();
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-
-    var typed = new Typed('.typing', {
-        strings: ['Ebrahem Sobhy', 'Developer', 'Designer', 'Freelancer'],
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true
-    });
-
-    function handleSubmit(event) {
-        event.preventDefault(); 
-
-        const form = document.getElementById('contact-form');
-
-        const submitButton = document.getElementById('submit-button');
-        const confirmationMessage = document.getElementById('confirmation-message');
-        const loadingSpinner = document.getElementById('loading-spinner');
-
-        submitButton.disabled = true; 
-        loadingSpinner.style.display = 'block'; 
-
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-        })
-        .then(response => {
-            if (response.ok) {
-                confirmationMessage.style.display = 'block'; 
-                form.reset(); 
-            } else {
-                throw new Error('حدث خطأ أثناء إرسال النموذج.');
-            }
-        })
-        .catch(error => {
-            alert(error.message); 
-        })
-        .finally(() => {
-            loadingSpinner.style.display = 'none'; 
-            submitButton.disabled = false; 
-        });
-    }
-
-    const form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', handleSubmit);
-    }
 });
 
-    </script>
+
+
+/* =========================
+   Reveal (improved: ms -> s, configurable)
+========================= */
+
+const reveals = document.querySelectorAll('.reveal');
+
+if (reveals.length) {
+
+  const observer = new IntersectionObserver((entries, obs) => {
+
+    entries.forEach(entry => {
+
+      if (!entry.isIntersecting) return;
+
+      const sec = entry.target;
+
+      // قراءة القيم القابلة للتخصيص من HTML data-*
+      const baseDelay = parseFloat(sec.getAttribute('data-delay')) || 0.08; // seconds
+      const stagger = parseFloat(sec.getAttribute('data-stagger')) || 0.09; // seconds
+      const duration = parseFloat(sec.getAttribute('data-duration')) || 0.7; // seconds
+
+      // نضبط متغيّرات CSS للقسم (يمكن تعديلها عبر CSS أيضاً)
+      sec.style.setProperty('--duration', duration + 's');
+      sec.style.setProperty('--stagger', stagger + 's');
+      sec.style.setProperty('--base-delay', baseDelay + 's');
+
+      // العناصر التي ستظهر متدرجة
+      const items = sec.querySelectorAll('.reveal-item');
+
+      items.forEach((it, i) => {
+        // يتيح override على مستوى العنصر باستخدام data-delay (بالثواني)
+        const itemAttr = it.getAttribute('data-delay');
+        const itemDelay = itemAttr ? parseFloat(itemAttr) : (baseDelay + i * stagger);
+        it.style.setProperty('--delay', itemDelay + 's');
+      });
+
+      // تشغيل progress bars داخل هذا القسم (إذا وُجدت)
+      const bars = sec.querySelectorAll('.progress-bar');
+      bars.forEach(bar => {
+        const target = parseInt(bar.getAttribute('data-w')) || 0;
+        // نترك transition في CSS ثابتة، فقط نُغير العرض هنا
+        requestAnimationFrame(() => bar.style.width = target + '%');
+        bar.setAttribute('aria-valuenow', target);
+        const label = bar.querySelector('.percent-label');
+        if (label) label.textContent = target + '%';
+      });
+
+      // اضف فئة in-view للقسم (العناصر الداخلية ستتفاعل عبر CSS المتغيرات)
+      sec.classList.add('in-view');
+
+      // افحص إذا أردنا تشغيل الأنيميشن مرة واحدة فقط (data-once أو one-time)
+      if (sec.hasAttribute('data-once') || sec.classList.contains('one-time')) {
+        obs.unobserve(sec);
+      } else {
+        // إذا أردنا تكرار الحركة عند الخروج والعودة: نتركه مراقباً
+        // لكن لحل الوميض غير المرغوب عند الخروج، لا نفعل شيئا إضافياً
+      }
+
+    });
+
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+  reveals.forEach(r => observer.observe(r));
+}
+
+
+/* =========================
+   Back To Top
+========================= */
+
+const backToTop =
+  document.getElementById('backToTop');
+
+if(backToTop){
+
+  window.addEventListener('scroll', ()=>{
+
+    if(window.scrollY > 200)
+      backToTop.classList.add('show');
+    else
+      backToTop.classList.remove('show');
+
+  });
+
+  backToTop.addEventListener('click', e=>{
+
+    e.preventDefault();
+
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    });
+
+  });
+
+}
+
+
+
+/* =========================
+   Typed.js
+========================= */
+
+if(
+  document.querySelector('.typing')
+  && typeof Typed !== "undefined"
+){
+
+  new Typed('.typing',{
+
+    strings:[
+      'Ibrahim Sobhy',
+      'Software Engineer',
+      'Full Stack Developer',
+      'Cyber Security Specialist',
+      'Ethical Hacker'
+    ],
+
+    typeSpeed:60,
+    backSpeed:40,
+    backDelay:1400,
+    loop:true
+
+  });
+
+}
+
+});
+</script>
 </body>
 </html>
